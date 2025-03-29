@@ -10,5 +10,5 @@ export const BaseContainer = ({ children, flex = false, ...rest }) => {
 BaseContainer.propTypes = {
   flex: PropTypes.bool,
   as: PropTypes.string,
-  children: PropTypes.isRequired
+  children: PropTypes.isRequired,
 }
