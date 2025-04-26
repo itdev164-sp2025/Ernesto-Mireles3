@@ -1,10 +1,12 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
+import styled, {ThemeProvider} from "styled-components"
 
-import { Header } from "./Header"
+import {Header} from "./Header"
 import "./layout.css"
-import { Gray } from "./themes/Gray"
+import {Gray} from "./themes/Gray"
+import {Main} from "./Main"
+import {Footer} from "./Footer"
 
 const Content = styled.div`
   margin: 0 auto;
@@ -12,10 +14,6 @@ const Content = styled.div`
   padding: var(--size-gutter);
 `
 
-const Footer = styled.footer`
-  margin-top: var(--space-5);
-  font-size: var(--font-sm);
-`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -32,7 +30,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={Gray}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Content>
-        <main>{children}</main>
+        <Main m={20}>{children}</Main>
         <Footer>
           © {new Date().getFullYear()} &middot; Built with
           {` `}
